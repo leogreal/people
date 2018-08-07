@@ -4,11 +4,13 @@ import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { StringUtils } from '../util'
 
 const PeopleListItems = props => {
-    const { people } = props;
+    const { people, navigateToPeopleDetail } = props;
     const { title, first, last } = people.name;
 
     return(
-        <TouchableOpacity onPress={ () => {} }>
+        <TouchableOpacity onPress={ () => {
+            navigateToPeopleDetail({ people });
+        }}>
             <View style={styles.line}>
                 <Image style={styles.avatar} source={{ uri: people.picture.thumbnail }} />
                 <Text style={styles.lineText}>
