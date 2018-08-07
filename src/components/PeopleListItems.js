@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 import { StringUtils } from '../util'
 
@@ -8,15 +8,18 @@ const PeopleListItems = props => {
     const { title, first, last } = people.name;
 
     return(
-        <View style={style.line}>
-            <Text style={style.lineText}>
-                { StringUtils.title(`${title} ${first} ${last}`) }
-            </Text>
-        </View>
+        <TouchableOpacity onPress={ () => {} }>
+            <View style={styles.line}>
+                <Image style={styles.avatar} source={{ uri: people.picture.thumbnail }} />
+                <Text style={styles.lineText}>
+                    { StringUtils.title(`${title} ${first} ${last}`) }
+                </Text>
+            </View>
+        </TouchableOpacity>
     );
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
     line: {
         height: 60,
         borderBottomWidth: 1,
@@ -28,6 +31,14 @@ const style = StyleSheet.create({
     lineText: {
         fontSize: 20,
         paddingLeft: 15,
+        flex: 7,
+    },
+    avatar: {
+        aspectRatio: 1,
+        flex: 1,
+
+        marginLeft: 15,
+        borderRadius: 50,
     }
 });
 
