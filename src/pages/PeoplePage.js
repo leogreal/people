@@ -4,7 +4,6 @@ import { Text, View, ActivityIndicator, StyleSheet } from 'react-native';
 import PeopleList from '../components/PeopleList';
 
 import axios from 'axios';
-import { triggerAsyncId } from 'async_hooks';
 
 export default class PeoplePage extends React.Component {
   
@@ -19,20 +18,20 @@ export default class PeoplePage extends React.Component {
   }
 
   componentDidMount(){
-    this.setState({loading: true})
+    this.setState({loading: true});
     axios
-      .get('http://randomuser.me/api/?nat=br&results=150')
+      .get('http://randomuser.me/api/?nat=br&results=50')
       .then( response => {
         const { results } = response.data;
         this.setState({
           peoples: results,
           loading: false,
-        })
-        .catch(error => {
-          this.setState({
-            loading: false,
-            error: true,
-          })
+        });
+      })
+      .catch(error => {
+        this.setState({
+          loading: false,
+          error: true,
         });
       });
   }

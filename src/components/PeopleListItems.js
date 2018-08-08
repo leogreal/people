@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-import { StringUtils } from '../util'
+import { StringUtils } from '../util';
 
 const PeopleListItems = props => {
     const { people, navigateToPeopleDetail } = props;

@@ -4,7 +4,7 @@ import { Text, View, StyleSheet } from 'react-native';
 const Line = ({label = '', content = '-'}) => {
     return (
         <View style={ styles.line }>
-            <Text style={ [styles.cell, style.label] }>{ label }</Text>
+            <Text style={ [styles.cell, styles.label] }>{ label }</Text>
             <Text style={ [styles.cell, styles.content] }>{ content }</Text>
         </View>
     );
