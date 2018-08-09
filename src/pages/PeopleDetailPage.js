@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, StyleSheet } from 'react-native';
+import { View, Image, StyleSheet, ScrollView } from 'react-native';
 import Line from "../components/Line";
 import { StringUtils } from '../util';
 
@@ -8,20 +8,22 @@ export default class PeopleDetailPage extends React.Component {
     const { people } = this.props.navigation.state.params;
 
     return (
-      <View style={ styles.container }>
-        <Image
-          source={{ uri: people.picture.large }}
-          style={ styles.avatar }
-        />
-        <View style={ styles.detailContainer }>
-          <Line label='Email:' content={ people.email } />
-          <Line label='Cidade:' content={ StringUtils.title(people.location.city) } />
-          <Line label='Estado:' content={ StringUtils.title(people.location.state) } />
-          <Line label='Tel:' content={ people.phone } />
-          <Line label='Cel:' content={ people.cel } />
-          <Line label='Nac:' content={ people.nat } />
+      <ScrollView>
+        <View style={ styles.container }>
+          <Image
+            source={{ uri: people.picture.large }}
+            style={ styles.avatar }
+          />
+          <View style={ styles.detailContainer }>
+            <Line label='Email:' content={ people.email } />
+            <Line label='Cidade:' content={ StringUtils.title(people.location.city) } />
+            <Line label='Estado:' content={ StringUtils.title(people.location.state) } />
+            <Line label='Tel:' content={ people.phone } />
+            <Line label='Cel:' content={ people.cel } />
+            <Line label='Nac:' content={ people.nat } />
+          </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
