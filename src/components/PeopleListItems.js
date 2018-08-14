@@ -1,47 +1,52 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import React from "react";
+import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-import { StringUtils } from '../util';
+import { StringUtils } from "../util";
 
 const PeopleListItems = props => {
-    const { people, navigateToPeopleDetail } = props;
-    const { title, first, last } = people.name;
+  const { people, navigateToPeopleDetail } = props;
+  const { title, first, last } = people.name;
 
-    return(
-        <TouchableOpacity onPress={ () => {
-            navigateToPeopleDetail({ people });
-        }}>
-            <View style={styles.line}>
-                <Image style={styles.avatar} source={{ uri: people.picture.thumbnail }} />
-                <Text style={styles.lineText}>
-                    { StringUtils.title(`${title} ${first} ${last}`) }
-                </Text>
-            </View>
-        </TouchableOpacity>
-    );
-}
+  return (
+    <TouchableOpacity
+      onPress={() => {
+        navigateToPeopleDetail({ people });
+      }}
+    >
+      <View style={styles.line}>
+        <Image
+          style={styles.avatar}
+          source={{ uri: people.picture.thumbnail }}
+        />
+        <Text style={styles.lineText}>
+          {StringUtils.title(`${title} ${first} ${last}`)}
+        </Text>
+      </View>
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
-    line: {
-        height: 60,
-        borderBottomWidth: 1,
-        borderBottomColor: '#bbb',
-        
-        alignItems: 'center',
-        flexDirection: 'row',
-    },
-    lineText: {
-        fontSize: 20,
-        paddingLeft: 15,
-        flex: 7,
-    },
-    avatar: {
-        aspectRatio: 1,
-        flex: 1,
+  line: {
+    height: 60,
+    borderBottomWidth: 1,
+    borderBottomColor: "#bbb",
 
-        marginLeft: 15,
-        borderRadius: 50,
-    }
+    alignItems: "center",
+    flexDirection: "row"
+  },
+  lineText: {
+    fontSize: 20,
+    paddingLeft: 15,
+    flex: 7
+  },
+  avatar: {
+    aspectRatio: 1,
+    flex: 1,
+
+    marginLeft: 15,
+    borderRadius: 50
+  }
 });
 
 export default PeopleListItems;

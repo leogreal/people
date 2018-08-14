@@ -1,41 +1,46 @@
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator } from "react-navigation";
 
-import PeoplePage from './src/pages/PeoplePage';
-import PeopleDetailPage from './src/pages/PeopleDetailPage';
+import PeoplePage from "./src/pages/PeoplePage";
+import PeopleDetailPage from "./src/pages/PeopleDetailPage";
 
-import { StringUtils } from './src/util'
+import { StringUtils } from "./src/util";
 
-export default createStackNavigator ({
-  Main: {
-    screen: PeoplePage
-  },
-  PeopleDetail: {
-    screen: PeopleDetailPage,
-    navigationOptions: ({ navigation }) => {
-      const peopleName = StringUtils.title(navigation.state.params.people.name.first);
-      return({
-        title: peopleName,
-        headerTitleStyle: {
-          color: 'white',
-          fontSize: 30,
-        }
-      });
-    }
-  }
-}, {
-  navigationOptions: {
-    title: 'People!',
-    headerTintColor: 'white',
-    headerStyle: {
-      backgroundColor: '#6ca2f7',
-      borderBottomWidth: 1,
-      borderBottomColor: '#C5C5C5',
+export default createStackNavigator(
+  {
+    Main: {
+      screen: PeoplePage
     },
-    headerTitleStyle: {
-      color: 'white',
-      fontSize: 30,
-      textAlign: 'center',
-      flex: 1,
+    PeopleDetail: {
+      screen: PeopleDetailPage,
+      navigationOptions: ({ navigation }) => {
+        const peopleName = StringUtils.title(
+          navigation.state.params.people.name.first
+        );
+        return {
+          title: peopleName,
+          headerTitleStyle: {
+            color: "white",
+            fontSize: 30
+          }
+        };
+      }
+    }
+  },
+  {
+    navigationOptions: {
+      title: "People!",
+      headerTintColor: "white",
+      headerStyle: {
+        backgroundColor: "#6ca2f7",
+        borderBottomWidth: 1,
+        borderBottomColor: "#C5C5C5"
+      },
+      headerTitleStyle: {
+        color: "white",
+        fontSize: 30,
+        textAlign: "center",
+        flex: 1
+      }
     }
   }
-});
+);
