@@ -5,7 +5,7 @@ import PeopleList from "../components/PeopleList";
 
 import axios from "axios";
 
-export default class PeoplePage extends React.Component {
+export default class PeopleScreen extends React.Component {
   constructor(props) {
     super(props);
 
@@ -35,7 +35,7 @@ export default class PeoplePage extends React.Component {
       });
   }
 
-  renderPage() {
+  renderScreen() {
     if (this.state.loading)
       return <ActivityIndicator size="large" color="#6ca2f7" />;
 
@@ -53,7 +53,7 @@ export default class PeoplePage extends React.Component {
   }
 
   render() {
-    return <View style={styles.container}>{this.renderPage()}</View>;
+    return <View style={styles.container}>{this.renderScreen()}</View>;
   }
 }
 

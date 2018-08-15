@@ -1,17 +1,17 @@
 import { createStackNavigator } from "react-navigation";
 
-import PeoplePage from "./src/pages/PeoplePage";
-import PeopleDetailPage from "./src/pages/PeopleDetailPage";
+import PeopleScreen from "./src/pages/PeopleScreen";
+import PeopleDetailScreen from "./src/pages/PeopleDetailScreen";
 
 import { StringUtils } from "./src/util";
 
 export default createStackNavigator(
   {
     Main: {
-      screen: PeoplePage
+      screen: PeopleScreen
     },
     PeopleDetail: {
-      screen: PeopleDetailPage,
+      screen: PeopleDetailScreen,
       navigationOptions: ({ navigation }) => {
         const peopleName = StringUtils.title(
           navigation.state.params.people.name.first
