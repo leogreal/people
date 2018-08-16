@@ -1,7 +1,7 @@
 import { createStackNavigator } from "react-navigation";
 
-import PeopleScreen from "../pages/PeopleScreen";
-import PeopleDetailScreen from "../pages/PeopleDetailScreen";
+import PeopleScreen from "../people/PeopleScreen";
+import PeopleDetailScreen from "../peopledetail/PeopleDetailScreen";
 import PeopleDetailNavigationOptions from "./PeopleDetailNavigationOptions";
 import NavigationOptions from "./NavigationOptions";
 

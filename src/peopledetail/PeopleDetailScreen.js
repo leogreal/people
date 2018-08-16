@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image, StyleSheet, ScrollView } from "react-native";
-import Line from "../components/Line";
+import Line from "./Line";
 import { StringUtils } from "../util";
 
 export default class PeopleDetailScreen extends React.Component {
