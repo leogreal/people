@@ -5,7 +5,7 @@ import { StringUtils } from "../util";
 
 const PeopleListItems = props => {
   const { people, navigateToPeopleDetail } = props;
-  const { title, first, last } = people.name;
+  const { title = "", first = "", last = "" } = people.name;
 
   return (
     <TouchableOpacity
