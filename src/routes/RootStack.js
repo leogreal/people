@@ -2,7 +2,7 @@ import { createStackNavigator } from "react-navigation";
 
 import PeopleScreen from "../pages/PeopleScreen";
 import PeopleDetailScreen from "../pages/PeopleDetailScreen";
-import { StringUtils } from "../util";
+import PeopleDetailNavigationOptions from "./PeopleDetailNavigationOptions";
 
 const RootStack = createStackNavigator(
   {
@@ -11,18 +11,7 @@ const RootStack = createStackNavigator(
     },
     PeopleDetail: {
       screen: PeopleDetailScreen,
-      navigationOptions: ({ navigation }) => {
-        const peopleName = StringUtils.title(
-          navigation.state.params.people.name.first
-        );
-        return {
-          title: peopleName,
-          headerTitleStyle: {
-            color: "white",
-            fontSize: 30
-          }
-        };
-      }
+      navigationOptions: PeopleDetailNavigationOptions
     }
   },
   {
