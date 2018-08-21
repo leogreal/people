@@ -13,7 +13,7 @@ const PeopleList = props => {
       renderItem={({ item }) => (
         <PeopleListItems people={item} navigateToPeopleDetail={onPressItem} />
       )}
-      keyExtractor={item => item.name.first}
+      keyExtractor={(item, index) => item.login.uuid}
     />
   );
 };
