@@ -3,7 +3,12 @@ import App from "./App";
 
 import renderer from "react-test-renderer";
 
-it("renders without crashing", () => {
+test("renders without crashing", () => {
   const rendered = renderer.create(<App />).toJSON();
   expect(rendered).toBeTruthy();
+});
+
+test("renders correctly", () => {
+  const tree = renderer.create(<App />).toJSON();
+  expect(tree).toMatchSnapshot();
 });
